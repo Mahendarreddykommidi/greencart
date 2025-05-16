@@ -9,14 +9,14 @@ export default function Productcard({ product }) {
     const navigate = useNavigate(); // Corrected
 
     return product && (
-        <div onClick={() => navigate(`/products/${product.category.toLowerCase()}/${product._id}`)} className="border border-gray-500/20 rounded-md md:px-7 px-3 py-2 bg-white  max-w-50 w-full">
+        <div onClick={() => navigate(`/products/${product.category.toLowerCase()}/${product._id}`)} className="border border-gray-500/20 rounded-md md:px-7 px-6 py-2 bg-white  max-w-60 w-full">
             <div className="group cursor-pointer flex items-center justify-center px-2">
                 <img className="group-hover:scale-105 transition max-w-26 md:max-w-36" src={product.image[0]} alt={product.name} />
             </div>
             <div className="text-gray-500/60 text-sm">
                 <p>{product.category}</p>
                 <p className="text-gray-700 font-medium text-lg truncate w-full">{product.name}</p>
-                <div className="flex items-center gap-0.5">
+                <div className="flex items-center gap-0.5 w-1 sm:w-3">
                     {Array(5).fill('').map((_, i) => (
                         <img
                             key={i}
@@ -38,13 +38,13 @@ export default function Productcard({ product }) {
                                     cartItems[product._id];
                                     addToCart(product._id);
                                 }}
-                                className="flex items-center justify-center gap-1 bg-[#4fbf8b]/30 text-[#44ae7c] text-xs opacity-80 md:w-[80px] w-[64px] h-[34px] rounded font-bold"
+                                className="flex items-center justify-center gap-1 bg-[#4fbf8b]/30 text-[#44ae7c] text-xs opacity-80 md:w-[80px] w-[65px] h-[34px] rounded font-bold"
                             >
                                 <img src={assets.cart_icon} alt="" className="w-5 font-semibold opacity-100" />
                                 Add
                             </button>
                         ) : (
-                            <div className="flex items-center justify-center gap-2 md:w-20 w-16 h-[34px] bg-indigo-500/25 rounded select-none">
+                            <div className="flex items-center justify-center gap-2 md:w-20 w-7 h-[34px] bg-indigo-500/25 rounded select-none">
                                 <button 
                                     onClick={() => removeFromCart(product._id)} 
                                     className="cursor-pointer text-md px-2 h-full"
