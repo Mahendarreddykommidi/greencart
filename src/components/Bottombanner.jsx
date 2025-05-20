@@ -6,7 +6,7 @@ const Bottombanner = () => {
     <div className='relative'>
         <img src={assets.bottom_banner_image} className="hidden md:block w-full" alt="" />
         <img src={assets.bottom_banner_image_sm} className='block md:hidden w-full' alt="" />
-        <div className='absolute inset-0 flex flex-col items-start justify-start md:items-end md:justify-center pt-16 md:pt-0 md:pr-24  '>
+        <div className='absolute inset-0 flex flex-col items-center justify-start md:items-end md:justify-center pt-16 md:pt-0 md:pr-24  '>
           <div>
             <h1 className='text-2xl md:text-3xl font-semibold mb-5 text-green-500'>Why We Are The Best</h1>
           {features.map((feature,index)=>(
